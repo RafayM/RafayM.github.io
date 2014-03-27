@@ -14,7 +14,7 @@
     	<p id="hello"> </p>
         
         
-        <span id="name"> Nadal </span> and <span id="name2"> Mats  </span> Wilander are the only two players in history who have <span id="verb"> won </span> at least two Grand Slam titles on three different surfaces hard court, grass, and clay. By winning the <span id="year">2013 </span> French Open, <span id="name"> Nadal</span> became the only male player to win a single Grand Slam tournament <span id="number"> eight </span> times and the first to win at least one Grand Slam tournament for nine consecutive years, breaking the record of eight consecutive years previously shared by Bjorn Borg, Pete Sampras, and Roger Federer. <span id="name"> Nadal</span> holds the record for most consecutive titles at a particular tournament as a result of winning his eighth straight <span id="place"> Monte-Carlo </span> Masters in 2012.
+        <span id="name" data-prompt="name"> Nadal </span> and <span id="name2" data-prompt="name"> Mats  </span> Wilander are the only two players in history who have <span id="verb" data-prompt="verb"> won </span> at least two Grand Slam titles on three different surfaces hard court, grass, and clay. By winning the <span id="year" data-prompt="year">2013 </span> French Open, <span id="name" data-prompt="name"> Nadal</span> became the only male player to win a single Grand Slam tournament <span id="number" data-prompt="number"> eight </span> times and the first to win at least one Grand Slam tournament for nine consecutive years, breaking the record of eight consecutive years previously shared by Bjorn Borg, Pete Sampras, and Roger Federer. <span id="name" data-prompt="name"> Nadal</span> holds the record for most consecutive titles at a particular tournament as a result of winning his eighth straight <span id="place" data-prompt="place"> Monte-Carlo </span> Masters in 2012.
         
         <script> 
          var placeholders = [
@@ -29,14 +29,30 @@ for (var i = 0; i < placeholders.length; i++) {
     var id = placeholders[i];
     var span = document.getElementById(id);
     var word = prompt('Please enter a ' + span.innerHTML);
+    console.log()
     span.innerHTML = word;
 }
+   	
+
+	var oneatatime =[];
+	
+	for (var i = 0; i < placeholders.length; i++) {
+    var id = placeholders[i];
+    var span = document.getElementById(id);
+    span.addEventListener('click', replaceWord, false);
+}
+
+function replaceWord() {
+	var span = e.target;
+	var wordPrompt = span.getAttribute('data-prompt');
+    var word = prompt('Please enter a ' + span.innerHTML);
+    if (word !== null) {
+        // Only replace if word *is not* null
+        span.innerHTML = word;
+    }
+}
         
-      /*    document.getElementById('name').innerHTML = prompt('Give a name');
-          document.getElementById('name2').innerHTML = prompt('Give another name!');
-          document.getElementById('verb').innerHTML = prompt('A Verb');
-          document.getElementById('year').innerHTML = prompt('A year, any year!!');
-          document.getElementById('number').innerHTML = prompt('Pick a #, any #!!'); */
+      
           
           
         </script>
