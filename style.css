@@ -1,0 +1,28 @@
+h1 {font-family:Courier;
+	font-size:3.0em;
+	font-weight: 200;
+	letter-spacing:0px;
+	line-height:1.25em;
+	font-style: normal;
+	margin:auto;
+	color:gold;}
+
+	
+	
+	
+		
+	
+		
+	body {
+        font: 14px helvetica, sans-serif;
+        background-color:teal;
+        font-size: 24px;
+    	color:white;
+    	letter-spacing:;
+    	width:550px;
+    	height:400px;
+    	margin: auto;
+    	background-image:url('stardust.png');
+    	position:relative;
+    	top:150px;
+    }
