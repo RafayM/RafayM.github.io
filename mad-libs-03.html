@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Mad-Libs_03</title>
+        <style>
+
+        body {
+            font: 18px/30px helvetica, sans-serif;
+        }
+
+        </style>
+    </head>
+    <body>
+    	<p id="hello"> </p>
+        
+        
+        <span id="name" data-prompt="name"> _____ </span> and 
+        <span id="name2" data-prompt="name"> _____  </span> Wilander are the only two players in history who have 
+        <span id="verb" data-prompt="verb"> _____ </span> at least two Grand Slam titles on three different surfaces hard court, grass, and clay. By winning the 
+        <span id="year" data-prompt="year"> _____ </span> French Open, 
+        <span id="name" data-prompt="name"> _____ </span> became the only male player to win a single Grand Slam tournament 
+        <span id="number" data-prompt="number"> _____ </span> times and the first to win at least one Grand Slam tournament for nine consecutive years, breaking the record of eight consecutive years previously shared by Bjorn Borg, Pete Sampras, and Roger Federer. 
+        <span id="name" data-prompt="name"> _____ </span> holds the record for most consecutive titles at a particular tournament as a result of winning his eighth straight 
+        <span id="place" data-prompt="place"> _____ </span> Masters in 2012.
+        
+        <script> 
+         var placeholders = [
+    'number',
+    'name',
+    'name2',
+    'verb',
+    'year',
+    'place'
+];
+
+   
+
+
+
+for (var i = 0; i < placeholders.length; i++) {
+    var id = placeholders[i];
+    var span = document.getElementById(id);
+    span.addEventListener('click', replaceWord, false);
+
+}
+
+function replaceWord(e) {
+var span = e.target;
+var wordPrompt = span.getAttribute('data-prompt');
+    var word = prompt('Please enter a ' + wordPrompt);
+    if (word !== null) {
+        // Only replace if word *is not* null
+        span.innerHTML = word;
+    }
+}
+
+	
+        
+      
+          
+          
+        </script>
+        
+    </body>
+</html>
